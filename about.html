@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script defer src="./scripts/about.js"></script>
+    <title>Fluff Stuff | About</title>
+  </head>
+  <body>
+    <!-- The wrapper for the whole page -->
+    <div class="wrapper">
+      <!-- The content of the home page -->
+      <div class="home-content">
+        <!-- The discount banner -->
+        <div class="banner">
+          <img
+            src="./images/banner.jpg"
+            alt="Discount banner image - Bedroom fading up into pink clouds"
+          />
+          <h2 class="banner-white-text" id="banner-1">
+            Sleep among <br />
+            the clouds at
+          </h2>
+          <h1 class="banner-2" id="banner-2-outline">50<span>%</span></h1>
+          <h1 class="banner-2">50<span>%</span></h1>
+          <h2 class="banner-white-text" id="banner-3">off<span>*</span></h2>
+          <p class="disclaimer">*Offer applicable only on select pillows</p>
+        </div>
+        <!-- Featured product cards and See total catalogue link -->
+        <div class="products">
+          <a
+            href="./product-details-couch.html"
+            class="product-card"
+            aria-label="Couch Pillow Product Card"
+          >
+            <img
+              class="product-image"
+              src="./images/couch.jpg"
+              alt="Pink couch pillow on a red couch"
+            />
+            <div class="label">
+              <h1>Couch Pillows</h1>
+              <p>Starting from $20</p>
+            </div>
+          </a>
+          <a
+            href="./product-details-bed.html"
+            class="product-card"
+            aria-label="Bed Pillow Product Card"
+          >
+            <img
+              class="product-image"
+              src="./images/bed.jpg"
+              alt="Gray bed pillow"
+            />
+            <div class="label">
+              <h1>Bed Pillows</h1>
+              <p>Starting from $30</p>
+            </div>
+          </a>
+          <!-- The catalogue card -->
+          <a
+            href="./product-browsing.html"
+            class="product-card see-all"
+            aria-label="See All Products Card"
+          >
+            <img
+              class="product-image"
+              src="./images/see_all.jpg"
+              alt="Various pillows stacked on top of each other"
+            />
+            <div class="label">
+              <h1>See All</h1>
+              <img src="./images/Arrow.svg" alt="Arrow Icon" />
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- Global navigation -->
+
+      <div id="about-modal">
+        <div class="about-card">
+          <div class="about-data">
+            <h1>About Fluff Stuff</h1>
+            <div class="about-location">
+              <img src="./images/location-marker.svg" alt="Map Marker Icon" />
+              <p>PITTSBURGH, PA</p>
+            </div>
+            <p class="about-textblock">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse orci orci, aliquam nec mauris ac, rhoncus maximus dui.
+              Nulla quam felis, ullamcorper vitae arcu vel, elementum venenatis
+              turpis. Donec at ipsum quis nisl dapibus accumsan. <br />
+              <br />
+              Suspendisse porta efficitur purus nec pellentesque. Donec at ipsum
+              quis nisl dapibus accumsan. Pellentesque eu erat auctor, posuere
+              nisl eget, posuere tellus. Class aptent taciti sociosqu ad litora
+              torquent per conubia nostra, per inceptos himenaeos. Aliquam
+              facilisis quis eros eu ullamcorper. <br />
+              <br />
+              Morbi pharetra sed urna finibus vestibulum. Etiam eu bibendum
+              nisi. Class aptent taciti sociosqu ad litora torquent per conubia
+              nostra, per inceptos himenaeos.
+            </p>
+          </div>
+          <img src="./images/map.jpg" alt="" class="map" />
+          <a href="#" id="close-modal" aria-label="Link to close the Modal"
+            ><img src="./images/close-icon.svg" alt="Close Icon for the Modal"
+          /></a>
+        </div>
+      </div>
+      <nav>
+        <div class="header">
+          <a href="#" aria-label="Logo Button to Homepage"
+            ><div id="logo">
+              <img src="./images/Logo.svg" alt="Fluff Stuff Logo" /></div
+          ></a>
+          <p id="sub-title">Get the right stuff under your head</p>
+        </div>
+        <div class="cart">
+          <img id="cart-image" src="./images/Cart.svg" alt="Empty Cart Icon" />
+          <h2 id="cart-status">Cart Empty</h2>
+          <a href="cart.html"><button id="go-to-cart">Go to cart</button></a>
+        </div>
+        <div class="about-section">
+          <a href="./about.html" class="link" aria-label="Link to about Section"
+            >About Fluff Stuff</a
+          >
+        </div>
+      </nav>
+    </div>
+  </body>
+</html>

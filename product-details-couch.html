@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script defer src="./scripts/product-details.js"></script>
+    <title>Fluff Stuff | Couch Pillows</title>
+  </head>
+  <body>
+    <!-- The wrapper for the whole page -->
+    <div class="wrapper">
+      <!-- The contents of the details page -->
+
+      <div class="product-details-content">
+        <a href="./index.html" class="back-link" aria-label="Link back to Home"
+          ><img src="./images/Back_Arrow.svg" alt="Back Arrow Icon" />
+          <p>Back to Home</p>
+        </a>
+        <!-- Breadcrumb navigation to establish the layout of the information architecture. -->
+        <div class="breadcrumbs">
+          <a
+            href="./product-browsing.html"
+            class="link"
+            aria-label="Link to All Products"
+            >All Products</a
+          >
+          <p>/</p>
+        </div>
+        <div class="shadow-element"></div>
+        <h1 id="details-title">Couch Pillow</h1>
+        <div class="details-container">
+          <!-- Product details info -->
+          <div class="details-data">
+            <img
+              class="details-image"
+              src="./images/couch.jpg"
+              alt="Image of dark red couch pillows"
+            />
+            <p class="details-content">
+              Integer lobortis turpis non velit cursus, id congue sapien
+              consectetur. In nisi eros, placerat id volutpat in, congue
+              faucibus elit. Sed lacinia vulputate arcu, non efficitur nulla
+              suscipit sit amet. Nullam lacus lectus, hendrerit nec lobortis
+              vitae, porttitor eget mauris.
+
+              <br />
+              <br />
+
+              Cras non interdum augue, id volutpat est. Mauris tellus ligula,
+              tristique tristique libero id, dapibus molestie massa. Vestibulum
+              et ultrices urna. Integer eget dolor eget nunc gravida placerat.
+              Morbi dictum ligula porttitor, congue mauris a, aliquet dolor.
+            </p>
+          </div>
+          <!-- Product customization options -->
+          <div class="details-options">
+            <div class="details-color">
+              <h2>Color</h2>
+              <div class="color-options">
+                <div class="container">
+                  <input
+                    type="radio"
+                    name="color-picker"
+                    id="after-school-special"
+                    aria-label="After School Special"
+                    checked
+                  />
+                  <label for="after-school-special"
+                    ><span class="colorbox afterschool"></span>
+                    <span>After School Special</span></label
+                  >
+                </div>
+
+                <div class="container">
+                  <input
+                    type="radio"
+                    name="color-picker"
+                    id="morning-haze"
+                    aria-label="Morning Haze"
+                  />
+                  <label for="morning-haze"
+                    ><span class="colorbox morninghaze"></span>
+                    <span>Morning Haze</span></label
+                  >
+                </div>
+
+                <div class="container">
+                  <input
+                    type="radio"
+                    name="color-picker"
+                    id="cozy-denim"
+                    aria-label="Cozy Denim"
+                  />
+                  <label for="cozy-denim"
+                    ><span class="colorbox cozydenim"></span>
+                    <span>Cozy Denim</span></label
+                  >
+                </div>
+
+                <div class="container">
+                  <input
+                    type="radio"
+                    name="color-picker"
+                    id="rainy-day"
+                    aria-label="Rainy Day"
+                  />
+                  <label for="rainy-day"
+                    ><span class="colorbox rainyday"></span>
+                    <span>Rainy Day</span></label
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="details-size">
+              <h2>Size</h2>
+              <div class="size-options">
+                <div class="container size-container">
+                  <input
+                    type="radio"
+                    name="size-picker"
+                    id="Small"
+                    aria-label="Small Size"
+                    checked
+                  />
+                  <label class="size-label" for="Small">
+                    <span class="size-title">Small</span>
+                    <span>24 cm long 24 cm wide 16 cm tall</span></label
+                  >
+                </div>
+
+                <div class="container size-container">
+                  <input
+                    type="radio"
+                    name="size-picker"
+                    id="Medium"
+                    aria-label="Medium Size"
+                  />
+                  <label class="size-label" for="Medium"
+                    ><span class="size-title">Medium </span>
+                    <span>40 cm long 40 cm wide 24 cm tall</span></label
+                  >
+                </div>
+
+                <div class="container size-container">
+                  <input
+                    type="radio"
+                    name="size-picker"
+                    id="Large"
+                    aria-label="Large Size"
+                  />
+                  <label class="size-label" for="Large"
+                    ><span class="size-title">Large</span>
+                    <span>64 cm long 64 cm wide 32 cm tall</span></label
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="details-quantity">
+              <h2>Quantity</h2>
+              <div class="quantity-unit">
+                <button class="decrease" aria-label="Decrease Quantity">
+                  -
+                </button>
+                <h1 id="quantity-value">1</h1>
+                <button class="increase" aria-label="Increase Quantity">
+                  +
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Add to cart unit -->
+        <div class="add-to-cart">
+          <h2 id="add-to-cart-text">
+            Add 1 pillow to cart <br />
+            $27.99
+          </h2>
+          <button id="add-to-cart-button" aria-label="Add to cart">
+            <img
+              src="./images/white_arrow.svg"
+              alt="White forward arrow icon"
+            />
+          </button>
+        </div>
+      </div>
+      <!-- Global navigation -->
+      <nav>
+        <div class="header">
+          <a href="./index.html" aria-label="Link to Home"
+            ><div id="logo">
+              <img src="./images/Logo.svg" alt="Fluff Stuff" /></div
+          ></a>
+          <p id="sub-title">Get the right stuff under your head</p>
+        </div>
+        <div class="cart">
+          <img id="cart-image" src="./images/Cart.svg" alt="Empty Cart" />
+          <h2 id="cart-status">Cart Empty</h2>
+          <a href="cart.html"><button id="go-to-cart">Go to cart</button></a>
+        </div>
+        <div class="about-section">
+          <a href="#" class="link" aria-label="Link to About page"
+            >About Fluff Stuff</a
+          >
+        </div>
+      </nav>
+    </div>
+  </body>
+</html>

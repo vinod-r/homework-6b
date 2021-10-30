@@ -13,6 +13,9 @@ const cartStatus = document.getElementById("cart-status");
 const cartIcon = document.getElementById("cart-image");
 const goToCart = document.getElementById("go-to-cart");
 const wishlist = document.getElementById("wishlist");
+const carouselImage = document.getElementById("carousel-image");
+const carouselNext = document.getElementById("carousel-next");
+const carouselPrev = document.getElementById("carousel-prev");
 
 //object to store prices for different pillows
 const costDatabase = {
@@ -216,3 +219,54 @@ wishlist.addEventListener("click", () => {
     updateWishlist();
   }
 });
+
+const carouselImages = [
+  "./images/carousel-1.jpg",
+  "./images/carousel-2.jpg",
+  "./images/carousel-3.jpg",
+  "./images/carousel-4.jpg",
+];
+
+let carouselIndex = 0;
+let input;
+const carouselUpdateManual = (e) => {
+  if (e == null) {
+    input = "carousel-next";
+  } else {
+    input = e.target.parentNode.id;
+  }
+
+  if (input == "carousel-next") {
+    if (carouselIndex == carouselImages.length - 1) {
+      carouselIndex = 0;
+    } else {
+      carouselIndex++;
+    }
+  } else {
+    if (carouselIndex == 0) {
+      carouselIndex = carouselImages.length - 1;
+    } else {
+      carouselIndex--;
+    }
+  }
+  carouselUpdateImage();
+};
+
+const carouselUpdateAuto = () => {
+  if (carouselIndex == carouselImages.length - 1) {
+    carouselIndex = 0;
+  } else {
+    carouselIndex++;
+  }
+
+  carouselUpdateImage();
+  setTimeout(carouselUpdateAuto, 2000);
+};
+
+const carouselUpdateImage = () => {
+  carouselImage.src = carouselImages[carouselIndex];
+};
+
+carouselNext.addEventListener("click", carouselUpdateManual);
+carouselPrev.addEventListener("click", carouselUpdateManual);
+setTimeout(carouselUpdateAuto, 2000);

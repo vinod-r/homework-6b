@@ -31,114 +31,94 @@ const createNewItem = (item) => {
   let pillowValue = costDatabase[pillowType];
   subtotal += parseInt(pillowQuantity * pillowSize * pillowValue);
 
-  let cartItem = document.createElement("div");
-  cartItem.setAttribute("class", "cart-item");
-  cartBody.appendChild(cartItem);
-
-  let cartProduct = document.createElement("div");
-  cartProduct.setAttribute("class", "cart-product");
-  cartItem.appendChild(cartProduct);
-
-  let cartImage = document.createElement("img");
+  let cartImageSrc;
+  let cartImageAlt;
   switch (pillowType) {
     case "B":
-      cartImage.src = "./images/bed.jpg";
-      cartImage.alt = "Bed Pillow";
+      cartImageSrc = "./images/bed.jpg";
+      cartImageAlt = "Bed Pillow";
       break;
     case "C":
-      cartImage.src = "./images/couch.jpg";
-      cartImage.alt = "Couch Pillow";
+      cartImageSrc = "./images/couch.jpg";
+      cartImageAlt = "Couch Pillow";
       break;
     case "F":
-      cartImage.src = "./images/floor.jpg";
-      cartImage.alt = "Floor Pouf";
+      cartImageSrc = "./images/floor.jpg";
+      cartImageAlt = "Floor Pouf";
       break;
     case "R":
-      cartImage.src = "./images/round.jpg";
-      cartImage.alt = "Round Pillow";
+      cartImageSrc = "./images/round.jpg";
+      cartImageAlt = "Round Pillow";
       break;
   }
 
-  cartProduct.appendChild(cartImage);
-
-  let productTitle = document.createElement("h1");
+  let productTitle;
   switch (pillowType) {
     case "B":
-      productTitle.innerHTML = "Bed Pillow";
+      productTitle = "Bed Pillow";
       break;
     case "C":
-      productTitle.innerHTML = "Couch Pillow";
+      productTitle = "Couch Pillow";
       break;
     case "F":
-      productTitle.innerHTML = "Floor Pouf";
+      productTitle = "Floor Pouf";
       break;
     case "R":
-      productTitle.innerHTML = "Round Pillow";
+      productTitle = "Round Pillow";
       break;
   }
-  cartProduct.appendChild(productTitle);
 
-  let cartProductDetails = document.createElement("div");
-  cartProductDetails.setAttribute("class", "cart-product-details");
-  cartProduct.appendChild(cartProductDetails);
-
-  let cartProductColor = document.createElement("h3");
-  cartProductColor.setAttribute("class", "cart-product-color");
+  let productColor;
   switch (pillowColor) {
     case "a":
-      cartProductColor.innerHTML = "After School Special";
+      productColor = "After School Special";
       break;
     case "m":
-      cartProductColor.innerHTML = "Morning Haze";
+      productColor = "Morning Haze";
       break;
     case "c":
-      cartProductColor.innerHTML = "Cozy Denim";
+      productColor = "Cozy Denim";
       break;
     case "r":
-      cartProductColor.innerHTML = "Rainy Day";
+      productColor = "Rainy Day";
       break;
   }
-  cartProductDetails.appendChild(cartProductColor);
 
-  let cartProductSize = document.createElement("h3");
-  cartProductSize.setAttribute("class", "cart-product-size");
+  let productSize;
   switch (pillowSize) {
     case "1":
-      cartProductSize.innerHTML = "Small";
+      productSize = "Small";
       break;
     case "2":
-      cartProductSize.innerHTML = "Medium";
+      productSize = "Medium";
       break;
     case "3":
-      cartProductSize.innerHTML = "Large";
+      productSize = "Large";
       break;
   }
 
-  cartProductDetails.appendChild(cartProductSize);
-
-  let cartQuantity = document.createElement("div");
-  cartQuantity.setAttribute("class", "cart-quantity");
-  cartQuantity.innerHTML = pillowQuantity;
-  cartItem.appendChild(cartQuantity);
-
-  let cartSubtotal = document.createElement("div");
-  cartSubtotal.setAttribute("class", "cart-subtotal");
-  cartSubtotal.innerHTML = `$${(
-    pillowQuantity *
-    pillowSize *
-    pillowValue
-  ).toFixed(2)}`;
-  cartItem.appendChild(cartSubtotal);
-
-  let cartButton = document.createElement("button");
-  cartButton.setAttribute("class", "cart-delete-item");
-  cartItem.appendChild(cartButton);
-
-  let closeButton = document.createElement("img");
-  closeButton.setAttribute("class", "cart-delete-icon");
-  closeButton.src = "./images/close-icon.svg";
-  closeButton.alt = "Delete Icon";
-  cartButton.appendChild(closeButton);
+  let cartItem = document.createElement("div");
+  cartItem.setAttribute("class", "cart-item");
+  cartItem.innerHTML = `<div class="cart-product">
+                        <img src=${cartImageSrc} alt=${cartImageAlt}>
+                        <h1>${productTitle}</h1>
+                        <div class="cart-product-details">
+                        <h3 class="cart-product-color">${productColor}</h3>
+                        <h3 class="cart-product-size">${productSize}</h3>
+                        </div>
+                        </div>
+                        <div class="cart-quantity">${pillowQuantity}</div>
+                        <div class="cart-subtotal">$${(
+                          pillowQuantity *
+                          pillowSize *
+                          pillowValue
+                        ).toFixed(2)}</div>
+                        <button class="cart-delete-item">
+                        <img class="cart-delete-icon" src="./images/close-icon.svg" alt="Delete Icon">
+                        </button>
+                        </div>
+                        `;
+  cartBody.appendChild(cartItem);
 };
 
 window.onload = () => {

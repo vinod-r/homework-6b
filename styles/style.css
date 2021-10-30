@@ -312,7 +312,7 @@ nav {
   font-weight: 500;
   font-size: 2em;
   color: var(--text-black);
-  padding-top: 2.5em;
+  padding-top: 1em;
 }
 
 /* Layout and styling of the internal pages */
@@ -323,6 +323,8 @@ nav {
 .wishlist-content {
   background-color: #fff;
   height: 100%;
+  /* overflow-y: scroll;
+  overflow-x: hidden; */
   position: relative;
   grid-area: content;
   padding: 4.5em 4.5em 4.5em 4.5em;
@@ -346,7 +348,7 @@ nav {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-gap: 2em;
-  padding-top: 3em;
+  padding: 3em 0 3em 0;
 }
 
 .product-listing-card,
@@ -417,6 +419,10 @@ nav {
   padding: 0 0.75em 0 0.75em;
 }
 
+.breadcrumbs a {
+  margin: 0;
+}
+
 #details-title {
   font-weight: 500;
   font-size: 2em;
@@ -449,8 +455,11 @@ nav {
 
 .details-image {
   grid-area: image;
+  aspect-ratio: 1/1;
   max-width: 365px;
   border-radius: 0.5em;
+  max-height: 365px;
+  object-fit: fill;
 }
 
 .details-content {
@@ -1070,7 +1079,6 @@ label span {
 #cart-empty-display h2 {
   padding: 1em;
   font-weight: 400;
-  /* background-color: red; */
 }
 
 #cart-empty-display h1 {
@@ -1111,11 +1119,12 @@ label span {
   width: 100%;
   display: grid;
   place-content: center;
-  padding: 4.5em;
+  padding: 1em;
   text-align: center;
 }
 
 .empty-wishlist img {
+  margin: auto;
   padding: 2em;
 }
 
@@ -1124,4 +1133,10 @@ label span {
   font-size: 2em;
   color: var(--text-black);
   padding-bottom: 1em;
+}
+
+.empty-wishlist a {
+  font-size: 1.5em;
+  padding: 1em;
+  font-weight: 400;
 }

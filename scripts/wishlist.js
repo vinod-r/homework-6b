@@ -132,11 +132,14 @@ backButton.addEventListener("click", () => {
 
 const updateWishlistEmpty = () => {
   let emptyWishlist = document.getElementsByClassName("empty-wishlist")[0];
+  let wishlistBody = document.getElementById("wishlist-body");
   let wishlistLS = localStorage.getItem("wishlist");
   console.log(wishlistLS);
   if (wishlistLS == "" || wishlistLS == null) {
     emptyWishlist.style.display = "grid";
+    wishlistBody.style.display = "none";
   } else {
     emptyWishlist.style.display = "none";
+    wishlistBody.style.display = "grid";
   }
 };

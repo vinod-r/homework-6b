@@ -12,6 +12,7 @@ const confirmAddBtn = document.getElementById("add-confirm");
 const cartStatus = document.getElementById("cart-status");
 const cartIcon = document.getElementById("cart-image");
 const goToCart = document.getElementById("go-to-cart");
+const wishlist = document.getElementById("wishlist");
 
 //object to store prices for different pillows
 const costDatabase = {
@@ -39,6 +40,7 @@ window.onload = () => {
             $${cost}`;
 
   updateCartDisplay();
+  updateWishlist();
 };
 
 //drawing the cart
@@ -186,4 +188,31 @@ addtoCartBtn.addEventListener("click", () => {
   localStorage.setItem("cart", cartStorage);
   addToCartUnit.style.display = "none";
   updateCartDisplay();
+});
+
+const updateWishlist = () => {
+  let wishlistLS = localStorage.getItem("wishlist");
+  if (wishlistLS != null) {
+    wishlistLS = wishlistLS.split(",");
+    if (wishlistLS.includes(pillowType)) {
+      wishlist.src = "./images/wishlist-active.svg";
+    } else {
+      wishlist.src = "./images/wishlist-inactive.svg";
+    }
+  } else {
+    localStorage.setItem("wishlist", "");
+  }
+};
+wishlist.addEventListener("click", () => {
+  let wishlistLS = localStorage.getItem("wishlist");
+  if (wishlistLS != null) {
+    let newWishlist = wishlistLS.split(",");
+    if (newWishlist.includes(pillowType)) {
+      newWishlist.splice(newWishlist.indexOf(pillowType), 1);
+    } else {
+      newWishlist.push(pillowType);
+    }
+    localStorage.setItem("wishlist", newWishlist);
+    updateWishlist();
+  }
 });

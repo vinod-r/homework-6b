@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script defer src="./scripts/wishlist.js"></script>
+    <title>Fluff Stuff | All Products</title>
+  </head>
+  <body>
+    <!-- The wrapper for the whole page -->
+    <div class="wrapper">
+      <!-- The content of the product listing page -->
+
+      <div class="wishlist-content">
+        <a href="#" class="back-link" aria-label="Link back to home"
+          ><img src="./images/Back_Arrow.svg" alt="Back Arrow" />
+          <p>Back</p>
+        </a>
+        <div class="shadow-element"></div>
+        <h1 id="page-title">Wishlist</h1>
+        <div id="wishlist-body"></div>
+        <div class="empty-wishlist">
+          <img src="./images/sadface.svg" alt="" />
+          <h1>Wishlist is empty!</h1>
+          <a href="./product-browsing.html">Go see some pillows!</a>
+        </div>
+      </div>
+      <!-- The global navigation -->
+      <nav>
+        <div class="header">
+          <a href="./index.html" aria-label="Link to Home"
+            ><div id="logo">
+              <img src="./images/Logo.svg" alt="Fluff Stuff" /></div
+          ></a>
+          <p id="sub-title">Get the right stuff under your head</p>
+        </div>
+        <div class="cart">
+          <img id="cart-image" src="./images/Cart.svg" alt="Empty Cart" />
+          <h2 id="cart-status">Cart Empty</h2>
+          <a href="cart.html"><button id="go-to-cart">Go to cart</button></a>
+        </div>
+        <div class="about-section">
+          <a href="./about.html" class="link" aria-label="Link to About Page"
+            >About Fluff Stuff</a
+          >
+        </div>
+      </nav>
+    </div>
+  </body>
+</html>

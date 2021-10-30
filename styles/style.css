@@ -278,6 +278,8 @@ nav {
   font-family: Inter;
   font-weight: 500;
   font-size: 1em;
+  text-align: center;
+  margin-top: 1em;
 }
 
 .link:visited {
@@ -317,7 +319,8 @@ nav {
 .product-listing-content,
 .product-details-content,
 .details-listing-card,
-.shopping-cart-content {
+.shopping-cart-content,
+.wishlist-content {
   background-color: #fff;
   height: 100%;
   position: relative;
@@ -346,7 +349,8 @@ nav {
   padding-top: 3em;
 }
 
-.product-listing-card {
+.product-listing-card,
+.wishlist-card {
   background-color: #fff;
   padding: 2em;
   box-shadow: 0px 0px 30px rgba(17, 94, 152, 0.03),
@@ -1074,4 +1078,50 @@ label span {
   font-size: 2em;
 
   color: var(--text-black);
+}
+
+#title-block {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: auto 1fr;
+}
+
+#wishlist {
+  padding: 1.25em 0 0 1.5em;
+  cursor: pointer;
+}
+
+#wishlist-body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2em;
+  padding-top: 4.5em;
+}
+
+.remove-button p {
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 1em;
+  text-align: center;
+  margin-top: 1em;
+  color: var(--text-red);
+}
+
+.empty-wishlist {
+  width: 100%;
+  display: grid;
+  place-content: center;
+  padding: 4.5em;
+  text-align: center;
+}
+
+.empty-wishlist img {
+  padding: 2em;
+}
+
+.empty-wishlist h1 {
+  font-weight: 500;
+  font-size: 2em;
+  color: var(--text-black);
+  padding-bottom: 1em;
 }

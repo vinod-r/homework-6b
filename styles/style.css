@@ -970,8 +970,7 @@ label span {
   border: none;
 }
 
-.cart-total-block {
-  /* background-color: red; */
+#cart-total-block {
   position: absolute;
   display: grid;
   grid-auto-flow: row;
@@ -983,15 +982,53 @@ label span {
 
 #final-sub-amount,
 #final-delivery-amount,
+#final-tax-amount {
+  text-align: end;
+  padding-top: 1.5em;
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 1em;
+
+  color: var(--text-gray);
+}
+
 #final-total-amount {
   text-align: end;
   padding-top: 1.5em;
+
+  font-weight: 500;
+  font-size: 1.5em;
+
+  text-align: right;
+
+  color: var(--text-black);
+}
+
+.total {
+  margin-top: 2em;
+  border-top: 1px solid var(--light-blue);
+  display: grid;
+  grid-auto-flow: column;
+  grid-column: span 2;
 }
 
 #final-subtotal,
 #final-delivery,
+#final-tax {
+  padding-top: 1.5em;
+
+  font-weight: 400;
+  font-size: 1em;
+
+  color: var(--text-gray);
+}
+
 #final-total {
   padding-top: 1.5em;
+  font-weight: 400;
+  font-size: 1.5em;
+
+  color: var(--text-gray);
 }
 
 #checkout {
@@ -1001,7 +1038,7 @@ label span {
   border: none;
   color: white;
   padding: 1em 4em 1em 4em;
-  margin-right: 4.5em;
+  margin: 10em 4.5em 0 0;
   border-radius: 1em;
   margin-top: 2em;
   cursor: pointer;
@@ -1012,4 +1049,29 @@ label span {
 
 #checkout:hover {
   transform: scale(1.05);
+}
+
+#cart-empty-display {
+  display: none;
+  text-align: center;
+  padding: 4.5em;
+  place-content: center;
+}
+
+#cart-empty-display img {
+  margin: auto;
+  padding: 2em;
+}
+
+#cart-empty-display h2 {
+  padding: 1em;
+  font-weight: 400;
+  /* background-color: red; */
+}
+
+#cart-empty-display h1 {
+  font-weight: 500;
+  font-size: 2em;
+
+  color: var(--text-black);
 }

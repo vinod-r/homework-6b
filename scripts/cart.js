@@ -1,6 +1,12 @@
 const backButton = document.getElementsByClassName("back-link")[0];
 const cartBody = document.getElementById("cart-body");
 const cartList = localStorage.getItem("cart");
+const cartHeader = document.getElementById("cart-header");
+const subtotalDisp = document.getElementById("final-sub-amount");
+const totalDisp = document.getElementById("final-total-amount");
+const taxDisp = document.getElementById("final-tax-amount");
+const cartIsEmpty = document.getElementById("cart-empty-display");
+const cartTotalBlock = document.getElementById("cart-total-block");
 
 const costDatabase = {
   B: 39.99,
@@ -8,6 +14,8 @@ const costDatabase = {
   F: 79.99,
   R: 29.99,
 };
+
+let subtotal = 0;
 
 //back button logic
 backButton.addEventListener("click", () => {
@@ -21,6 +29,7 @@ const createNewItem = (item) => {
   let pillowSize = item[2];
   let pillowQuantity = item.substring(3);
   let pillowValue = costDatabase[pillowType];
+  subtotal += parseInt(pillowQuantity * pillowSize * pillowValue);
 
   let cartItem = document.createElement("div");
   cartItem.setAttribute("class", "cart-item");
@@ -133,7 +142,8 @@ const createNewItem = (item) => {
 };
 
 window.onload = () => {
-  if (cartList != null) {
+  console.log(cartList);
+  if (cartList != "" && cartList != null) {
     let cartItems = cartList.split(" ");
     cartItems = cartItems.splice(1);
     cartItems.forEach((item) => {
@@ -147,10 +157,19 @@ window.onload = () => {
         e.target.parentNode.parentNode.parentNode.removeChild(
           e.target.parentNode.parentNode
         );
+        console.log("works");
+
+        let item = cartItems[i];
+        let pillowType = item[0];
+        let pillowSize = item[2];
+        let pillowQuantity = item.substring(3);
+        let pillowValue = costDatabase[pillowType];
+        subtotal -= parseInt(pillowQuantity * pillowSize * pillowValue);
 
         let newCart = "";
         if (cartItems.length === 1) {
           cartItems = [];
+          redrawCart();
         } else {
           cartItems.splice(i, 1);
         }
@@ -159,8 +178,27 @@ window.onload = () => {
           newCart = `${newCart} ${item}`;
         });
 
+        updateValues();
         localStorage.setItem("cart", newCart);
       });
     }
+    updateValues();
+  } else {
+    redrawCart();
   }
+};
+
+const updateValues = () => {
+  subtotal = subtotal.toFixed(2);
+  subtotalDisp.innerHTML = `$${subtotal}`;
+  let tax = (subtotal * 0.18).toFixed(2);
+  taxDisp.innerHTML = `$${tax}`;
+  totalDisp.innerHTML = `$${(parseInt(subtotal) + parseInt(tax)).toFixed(2)}`;
+};
+
+const redrawCart = () => {
+  cartIsEmpty.style.display = "grid";
+  cartHeader.style.display = "none";
+  cartBody.style.display = "none";
+  cartTotalBlock.style.display = "none";
 };

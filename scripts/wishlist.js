@@ -116,7 +116,7 @@ const createWishlistItem = (type) => {
               >
               <a
                 href="./product-details-couch.html"
-                class="link"
+                class="wishlist-link"
                 aria-label="Link to Customize ${title}"
                 >Customize</a
               >

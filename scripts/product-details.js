@@ -58,7 +58,6 @@ const updateCartDisplay = () => {
         itemsInCart = itemsInCart + parseInt(product.substring(3));
       }
     });
-    // itemsInCart = cartListArr.length;
   }
 
   if (itemsInCart > 0) {
@@ -193,6 +192,7 @@ addtoCartBtn.addEventListener("click", () => {
   updateCartDisplay();
 });
 
+//redrawing wishlist
 const updateWishlist = () => {
   let wishlistLS = localStorage.getItem("wishlist");
   if (wishlistLS != null) {
@@ -220,6 +220,7 @@ wishlist.addEventListener("click", () => {
   }
 });
 
+//array of all carousel items
 const carouselImages = [
   "./images/carousel-1.jpg",
   "./images/carousel-2.jpg",
@@ -227,6 +228,7 @@ const carouselImages = [
   "./images/carousel-4.jpg",
 ];
 
+//upading carousel manually
 let carouselIndex = 0;
 let input;
 const carouselUpdateManual = (e) => {
@@ -251,6 +253,8 @@ const carouselUpdateManual = (e) => {
   }
   carouselUpdateImage();
 };
+
+//advancing carousel automatically
 
 const carouselUpdateAuto = () => {
   if (carouselIndex == carouselImages.length - 1) {

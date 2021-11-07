@@ -1,3 +1,4 @@
+//declaring and assigned DOM elements
 const cartStatus = document.getElementById("cart-status");
 const cartIcon = document.getElementById("cart-image");
 const goToCart = document.getElementById("go-to-cart");

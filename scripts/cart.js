@@ -33,8 +33,10 @@ const createNewItem = (item) => {
   let pillowValue = costDatabase[pillowType];
   subtotal += parseInt(pillowQuantity * pillowSize * pillowValue);
 
+  //getting the right image and alt text
   let cartImageSrc;
   let cartImageAlt;
+
   switch (pillowType) {
     case "B":
       cartImageSrc = "./images/bed.jpg";
@@ -53,7 +55,7 @@ const createNewItem = (item) => {
       cartImageAlt = "Round Pillow";
       break;
   }
-
+  // getting the right pillow type
   let productTitle;
   switch (pillowType) {
     case "B":
@@ -70,6 +72,7 @@ const createNewItem = (item) => {
       break;
   }
 
+  //getting the right color
   let productColor;
   switch (pillowColor) {
     case "a":
@@ -86,6 +89,7 @@ const createNewItem = (item) => {
       break;
   }
 
+  //getting the correct pillow size
   let productSize;
   switch (pillowSize) {
     case "1":

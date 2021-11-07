@@ -1,9 +1,12 @@
+//declaring and assigning dom elements
+
 const cartStatus = document.getElementById("cart-status");
 const cartIcon = document.getElementById("cart-image");
 const goToCart = document.getElementById("go-to-cart");
 const backButton = document.getElementsByClassName("back-link")[0];
 let removeButtons;
 
+//js objects to rebuild from local storage
 const imageDatabase = {
   B: "./images/bed.jpg",
   C: "./images/couch.jpg",
@@ -25,6 +28,7 @@ const costDatabase = {
   R: 29.99,
 };
 
+//triggering wishlist state on page load
 window.onload = () => {
   updateCartDisplay();
   let wishlistLS = localStorage.getItem("wishlist");
@@ -86,6 +90,7 @@ const updateCartDisplay = () => {
   }
 };
 
+//creating dynamic wishlist items
 const createWishlistItem = (type) => {
   const wishlistItem = document.createElement("div");
   wishlistItem.setAttribute("class", "wishlist-card");
@@ -130,6 +135,7 @@ backButton.addEventListener("click", () => {
   history.go(-1);
 });
 
+//updating empty state for wishlist
 const updateWishlistEmpty = () => {
   let emptyWishlist = document.getElementsByClassName("empty-wishlist")[0];
   let wishlistBody = document.getElementById("wishlist-body");

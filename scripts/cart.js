@@ -1,3 +1,5 @@
+// assigning dom elements to variables
+
 const backButton = document.getElementsByClassName("back-link")[0];
 const cartBody = document.getElementById("cart-body");
 const cartList = localStorage.getItem("cart");
@@ -97,6 +99,8 @@ const createNewItem = (item) => {
       break;
   }
 
+  // Generating cart item with dynamic content
+
   let cartItem = document.createElement("div");
   cartItem.setAttribute("class", "cart-item");
   cartItem.innerHTML = `<div class="cart-product">
@@ -121,6 +125,7 @@ const createNewItem = (item) => {
   cartBody.appendChild(cartItem);
 };
 
+// Generating cart on page load
 window.onload = () => {
   console.log(cartList);
   if (cartList != "" && cartList != null) {
@@ -132,20 +137,25 @@ window.onload = () => {
 
     let deleteButtons = document.getElementsByClassName("cart-delete-icon");
 
+    // For Loop to run through all the delete buttons
+
     for (let i = 0; i < deleteButtons.length; i++) {
       deleteButtons[i].addEventListener("click", (e) => {
         e.target.parentNode.parentNode.parentNode.removeChild(
           e.target.parentNode.parentNode
         );
-        console.log("works");
 
         let item = cartItems[i];
         let pillowType = item[0];
         let pillowSize = item[2];
         let pillowQuantity = item.substring(3);
         let pillowValue = costDatabase[pillowType];
+
+        //update Subtotal when removing cart Item.
+
         subtotal -= parseInt(pillowQuantity * pillowSize * pillowValue);
 
+        // removing the item from the array and updating local storage
         let newCart = "";
         if (cartItems.length === 1) {
           cartItems = [];
@@ -162,12 +172,16 @@ window.onload = () => {
         localStorage.setItem("cart", newCart);
       });
     }
+
+    //updating all the values changed by removing an item
     updateValues();
   } else {
+    //redrawing Cart to update all values when a change happens.
     redrawCart();
   }
 };
 
+//Updating all values in the cart details section
 const updateValues = () => {
   subtotal = subtotal.toFixed(2);
   subtotalDisp.innerHTML = `$${subtotal}`;
@@ -176,6 +190,7 @@ const updateValues = () => {
   totalDisp.innerHTML = `$${(parseInt(subtotal) + parseInt(tax)).toFixed(2)}`;
 };
 
+// redrawing cart to show items / empty state based on cart item in Local Storage
 const redrawCart = () => {
   cartIsEmpty.style.display = "grid";
   cartHeader.style.display = "none";
